@@ -5,7 +5,7 @@ import pathlib
 
 import pandas as pd
 
-from .abstractions import TrainingFileReader
+from .readers import TrainingFileReader
 from heartrate.heartrate import HeartRate
 
 

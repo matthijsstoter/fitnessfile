@@ -21,26 +21,19 @@ for file in files:
 
         hr = HeartRate(tr_file.data["heart_rate"])
 
-        print(filepath)
-
-        reader = readers.CSVFileReader(filepath)
-        trainingfile.TrainingFile(reader)
-
-
         if type(hr) == HeartRate:
 
             hr_max = 200
             hr_min = 50
 
-
-            # print(
-            #     hr.compute_delta_hr_ratio(hr_max=hr_max, hr_rest=hr_min),
-            # hr.compute_factor_based_trimp(trimp=TRIMPBanister(), hr_max=hr_max, hr_min=hr_min, gender="Male"),
-            # hr.compute_delta_hr_ratio(hr_max=hr_max, hr_rest=hr_min),
-            # hr.compute_heartrate_zones(hr_max=hr_max, zones=TRIMPEdwards().zones),
-            # hr.compute_heartratereserve_zones(hr_max=hr_max, hr_min=hr_min, zones=TRIMPEdwards().zones),
-            # hr.compute_percentage_heartrate_reserve(hr_max=hr_max, hr_min=hr_min),
-            # hr.compute_percentage_heartrate_max(hr_max=hr_max))
+            print(
+                hr.compute_delta_hr_ratio(hr_max=hr_max, hr_rest=hr_min),
+            hr.compute_factor_based_trimp(trimp=TRIMPBanister(), hr_max=hr_max, hr_min=hr_min, gender="Male"),
+            hr.compute_delta_hr_ratio(hr_max=hr_max, hr_rest=hr_min),
+            hr.compute_heartrate_zones(hr_max=hr_max, zones=TRIMPEdwards().zones),
+            hr.compute_heartratereserve_zones(hr_max=hr_max, hr_min=hr_min, zones=TRIMPEdwards().zones),
+            hr.compute_percentage_heartrate_reserve(hr_max=hr_max, hr_min=hr_min),
+            hr.compute_percentage_heartrate_max(hr_max=hr_max))
 
 
 

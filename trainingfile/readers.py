@@ -1,15 +1,41 @@
-from fileinput import filename
-from mimetypes import init
+from datetime import datetime
+from collections import defaultdict
+from dataclasses import dataclass, field
+from abc import ABC, abstractmethod, abstractproperty
 import pathlib
 from typing import Any
+
 import pandas as pd
-from collections import defaultdict
 from fitparse import FitFile
-from datetime import datetime
-from .abstractions import TrainingFileReader
-from dataclasses import dataclass, field
 import gpxpy
 import gpxpy.gpx
+
+
+
+
+
+class TrainingFileReader(ABC):
+    """Abstract base class for all classes responsible for reading the training load file"""
+    
+    @abstractproperty
+    def file_type(self) -> str:
+        "Returns the filetype as a str"
+    
+    @abstractmethod
+    def read_file(self) -> pd.DataFrame:
+        """Reading the file containing the training load data into a Pandas DataFrame"""
+    
+    @abstractproperty
+    def training_type(self) -> str:
+        """Retrieving the training type"""
+    
+    @abstractproperty
+    def start_time(self) -> datetime:
+        "Retrieving the training start time"
+    
+    @abstractmethod
+    def duration(self, raw_duration: float) -> float:
+        "Computing the training duration"
     
 
 @dataclass
