@@ -11,9 +11,6 @@ import gpxpy
 import gpxpy.gpx
 
 
-
-
-
 class TrainingFileReader(ABC):
     """Abstract base class for all classes responsible for reading the training load file"""
     
