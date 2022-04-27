@@ -1,2 +1,2 @@
-# Heartrate
-Package that can be used to parse and analyze heart rate data
+# Training file
+Package that can be used to parse and analyze training files
